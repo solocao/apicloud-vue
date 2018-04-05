@@ -3,8 +3,17 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import Quasar, * as All from 'quasar';
+import 'quasar-extras/roboto-font/roboto-font.css';
+import 'quasar-extras/material-icons/material-icons.css';
+import './css/app.styl';
 
 Vue.config.productionTip = false;
+
+Vue.use(Quasar, {
+  components: All,
+  directives: All,
+});
 
 /* eslint-disable no-new */
 new Vue({

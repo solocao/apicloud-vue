@@ -4,7 +4,7 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -36,11 +36,14 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      css: path.resolve(__dirname, '../src/css'),
+      quasar: path.resolve(__dirname, '../node_modules/quasar-framework/dist/quasar.mat.esm.js'),
+      'quasar-styl': path.resolve(__dirname, '../node_modules/quasar-framework/dist/quasar.mat.styl')
     }
   },
   module: {
     rules: [
-      ...(config.dev.useEslint ? [createLintingRule()] : []),
+      // ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
         test: /\.vue$/,
         loader: 'vue-loader',

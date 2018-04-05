@@ -1,0 +1,219 @@
+// 定义全局样式
+// 自定义主题变量
+@import '~css/themes/variables.styl'
+@import '~quasar-framework/dist/quasar.mat.styl';
+
+* {
+  font-family: 'Microsoft YaHei UI', 'Microsoft YaHei', 'Source Han Sans CN', 'Source Han Sans SC', 'Helvetica Neue', Helvetica, 'Nimbus Sans L', Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei', 'ST Heiti', 'WenQuanYi Zen Hei Sharp', sans-serif;
+}
+
+bg-color = #f4f4f4
+text-color = #8297b0
+fw700 = 700
+.a-padding-20 {
+  padding 20px
+}
+.a-height-48 {
+  height 48px
+
+}
+.a-fw700{
+  font-weight: 700
+}
+color(n){
+  color n
+}
+
+height(n){
+  height n
+}
+
+z-index(n){
+  z-index n
+}
+
+border-radius(n) {
+  -webkit-border-radius n
+  -moz-border-radius n
+  border-radius n
+}
+// margin
+margin-top(n){
+  margin-top n
+}
+margin-bottom(n){
+  margin-bottom: n
+}
+margin-left(n){
+  margin-left: n
+}
+margin-right(n){
+  margin-right: n
+}
+m-t-b(n){
+  margin-top(n)
+  margin-bottom(n)
+}
+// padding
+padding-top(n){
+  padding-top n
+}
+
+f-font-size(n) {
+  font-size n
+}
+
+.a-fz14 {
+  f-font-size(14px)
+}
+
+.btn-css{
+  width 120px
+  height 36px
+}
+
+.color-fff{
+  color(#fff)
+}
+
+.m-t-30{
+  margin-top(30px)
+}
+.m-t-10{
+  margin-top(10px)
+}
+.m-b-30{
+  margin-bottom(30px)
+}
+.m-r-20{
+  margin-right(20px)
+}
+.m-r-40{
+  margin-right(40px)
+}
+.m-l-20{
+  margin-left(20px)
+}
+.m-t-b-15{
+  m-t-b(15px)
+}
+.p-t-0{
+  padding-top(0px)
+}
+
+.height-50{
+  height(50px)
+}
+
+.z-index-2{
+  z-index(2)
+}
+.a-p0 {
+  padding 0px
+}
+// flex center
+.a-fc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+// index
+#slide .tabs {
+  height: 100%;
+  margin-top: 20%;
+  margin-left: 80%;
+  float: left;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#slide .tabs a {
+  display: block;
+  width: 120px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  line-height: 30px;
+}
+#slide .tabs ul {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  -moz-transition: all .2s ease;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+#slide .tabs li.order5 {
+  order: 2;
+}
+#slide .tabs li.order4 {
+  order: 1;
+}
+#slide .tabs li.order3 {
+  order: 5;
+}
+#slide .tabs li.order2 {
+  order: 4;
+}
+#slide .tabs li.order1 {
+  position: relative;
+  order: 3;
+}
+#slide .tabs li.order3 a, #slide .tabs li.order4 a {
+  color: rgba(33,150,243,0.3);
+}
+#slide .tabs li.order2 a, #slide .tabs li.order5 a {
+  color: rgba(33,150,243,0.6);
+}
+#slide .tabs li.order1 a::before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-left-color: #fff;
+  position: absolute;
+  left: -25px;
+  top: 5px;
+}
+
+// 全局设置siderbar
+aside {
+  overflow hidden!important
+}
+
+header {
+  box-shadow: 0px 2px 2px 0px rgba(193, 193, 193, 0.59)!important
+}
+
+
+.a-fs16{
+  font-size: 16px;
+}
+
+// btn
+.btn-css{
+  display inline-block
+  text-align center
+  color #ffffff
+  width 120px
+  height 36px
+  line-height: 36px
+  border-radius 2px
+  box-shadow 0px 2px 2px 0px rgba(60, 109, 148, 0.28)
+  transition all .3s ease
+
+  &:hover{
+    opacity: 0.8
+  }
+}
+.bg-defult{
+  background-color #2196f3
+}
+.bg-gray{
+  background-color #8297b0
+}
