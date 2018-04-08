@@ -3,6 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import WindowLib from './lib/window';
 import Quasar, * as All from 'quasar';
 import 'quasar-extras/roboto-font/roboto-font.css';
 import 'quasar-extras/material-icons/material-icons.css';
@@ -15,12 +16,14 @@ Vue.use(Quasar, {
   directives: All,
 });
 
-alert(process.env.NODE_ENV);
-
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>',
+WindowLib.ready(() => {
+  // WindowLib.isApiCloud()
+  /* eslint-disable no-new */
+  new Vue({
+    el: '#app',
+    router,
+    components: { App },
+    template: '<App/>',
+  });
 });
+

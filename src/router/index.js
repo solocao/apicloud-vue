@@ -11,6 +11,12 @@ export default new Router({
       path: '/',
       name: 'LayoutDefault',
       component: LayoutDefault,
+      children: [{
+        path: 'hello',
+        name: 'hello',
+        component: HelloWorld,
+      }],
+      redirect: () => '/hello',
     },
   ],
 });

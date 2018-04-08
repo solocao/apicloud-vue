@@ -10,14 +10,12 @@
 </template>
 
 <script>
-import 'video.js/dist/video-js.css';
-
-import { videoPlayer } from 'vue-video-player';
+import VideoPlayer from './VideoPlayer';
 
 export default {
   name: 'HelloWorld',
   components: {
-    videoPlayer,
+    VideoPlayer,
   },
   data() {
     return {

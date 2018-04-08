@@ -3,11 +3,11 @@
     <q-layout-header>
       <layout-header></layout-header>
     </q-layout-header>
-    <q-layout-drawer side="left" v-model="showLeft" class="full-height">
+    <q-layout-drawer side="left" class="full-height">
       hah
     </q-layout-drawer>
     <q-page-container>
-      shouye
+      <router-view/>
     </q-page-container>
   </q-layout>
 </template>
