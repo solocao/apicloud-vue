@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import WindowLib from '../lib/window';
 import HelloWorld from '@/components/HelloWorld';
 import LayoutDefault from '@/components/LayoutDefault';
 import TheNews from '@/pages/TheNews';
@@ -10,12 +11,8 @@ const queryString = require('query-string');
 Vue.use(Router);
 
 const router = new Router({
+  // mode: 'history',
   routes: [
-    {
-      path: '/redirect/:path',
-      name: 'LayoutDefault',
-      component: LayoutDefault,
-    },
     {
       path: '/',
       name: 'LayoutDefault',
@@ -28,6 +25,10 @@ const router = new Router({
       redirect: () => '/hello',
     },
     {
+      path: '/redirect/:path',
+      name: 'LayoutDefault',
+    },
+    {
       path: '/news',
       name: 'TheNews',
       component: TheNews,
@@ -37,11 +38,27 @@ const router = new Router({
       name: 'TheVideo',
       component: TheVideo,
     },
+
   ],
 });
 
 router.beforeEach(async (to, from, next) => {
-  console.log(to);
+  if (WindowLib.isApiCloud() && api.pageParam.path !== undefined) {
+    if (to.fullPath.indexOf('redirect') === -1) {
+      next({
+        path: `/${api.pageParam.path}`,
+        query: { redirect: true },
+      });
+    }
+  }
+
+  // if (to.params.path !== undefined) {
+  //   // alert(to.params.path);
+  //   next('/news');
+  // }
+
+  // console.log(JSON.stringify(location));
+  // console.log(JSON.stringify(to));
   // const parsed = queryString.parse(location.search);
   // if (parsed.redirect !== undefined) {
   //   // const { host, pathname } = location;
@@ -57,7 +74,7 @@ router.beforeEach(async (to, from, next) => {
   //   next({ path: '/' });
   //   alert('h');
   // }
-  next();
+  next(true);
 });
 
 export default router;

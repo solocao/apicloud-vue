@@ -1,6 +1,6 @@
 <template>
   <q-layout ref="layout" view="lHh Lpr lFf">
-    <q-layout-header id="header">
+    <q-layout-header>
       <layout-header></layout-header>
     </q-layout-header>
     <q-layout-drawer side="left" class="full-height">
@@ -14,7 +14,6 @@
   </q-layout>
 </template>
 <script>
-import { fixStatusBar } from '../lib/api';
 import LayoutHeader from './LayoutHeader';
 import LayoutFooter from './LayoutFooter';
 
@@ -24,9 +23,8 @@ export default {
     LayoutFooter,
   },
   mounted() {
-    const header = document.getElementById('header');
-    fixStatusBar(header);
-    this.openNews();
+
+    // this.openNews();
   },
   methods: {
     openNews() {
@@ -47,6 +45,7 @@ export default {
         });
       }
     },
+
   },
 };
 </script>

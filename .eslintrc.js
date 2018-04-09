@@ -15,6 +15,9 @@ module.exports = {
   plugins: [
     'vue'
   ],
+  globals: {
+    api: true,
+  },
   // check if imports actually resolve
   settings: {
     'import/resolver': {
