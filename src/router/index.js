@@ -5,6 +5,7 @@ import HelloWorld from '@/components/HelloWorld';
 import LayoutDefault from '@/components/LayoutDefault';
 import TheNews from '@/pages/TheNews';
 import TheVideo from '@/pages/TheVideo';
+import TheUser from '@/pages/TheUser';
 
 const queryString = require('query-string');
 
@@ -37,6 +38,11 @@ const router = new Router({
       path: '/video',
       name: 'TheVideo',
       component: TheVideo,
+    },
+    {
+      path: '/user',
+      name: 'TheUser',
+      component: TheUser,
     },
 
   ],

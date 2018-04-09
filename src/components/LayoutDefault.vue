@@ -1,50 +1,65 @@
 <template>
   <q-layout ref="layout" view="lHh Lpr lFf">
-    <q-layout-header>
-      <layout-header></layout-header>
-    </q-layout-header>
-    <q-layout-drawer side="left" class="full-height">
-    </q-layout-drawer>
     <q-page-container>
       <router-view/>
     </q-page-container>
     <q-layout-footer>
-      <layout-footer></layout-footer>
+      <layout-footer :index="index"></layout-footer>
     </q-layout-footer>
   </q-layout>
 </template>
 <script>
-import LayoutHeader from './LayoutHeader';
 import LayoutFooter from './LayoutFooter';
 
 export default {
   components: {
-    LayoutHeader,
     LayoutFooter,
   },
+  data() {
+    return {
+      index: 1,
+    };
+  },
   mounted() {
-
+    if (this.WindowLib.isApiCloud()) {
+      this.openFrameGroup();
+    }
     // this.openNews();
   },
   methods: {
-    openNews() {
-      if (this.WindowLib.isApiCloud()) {
-        api.openFrame({
-          name: 'mainLiveFrame',
-          url: 'index.html#/redirect/sdsd',
-          rect: {
-            x: (api.frameWidth - 89) / 2,
-            y: api.frameHeight - 89,
-            w: 300,
-            h: 300,
-          },
-          bounces: false,
-          bgColor: 'rgba(0,0,0,0)',
-          vScrollBarEnabled: false,
-          hScrollBarEnabled: false,
-        });
-      }
+    openFrameGroup() {
+      const self = this;
+      api.openFrameGroup({
+        name: 'tabFrames',
+        scrollEnabled: true,
+        rect: {
+          x: 0,
+          y: 0,
+          w: 'auto',
+          h: api.frameHeight - 48,
+        },
+        index: 0,
+        preload: 2,
+        frames: [{
+          name: 'news',
+          url: './index.html',
+          pageParam: { path: 'news' },
+        }, {
+          name: 'video',
+          url: './index.html',
+          pageParam: { path: 'video' },
+        },
+        {
+          name: 'user',
+          url: './index.html',
+          pageParam: { path: 'user' },
+        }],
+      }, (ret, err) => {
+        const index = ret.index;
+        self.index = index;
+      });
     },
+
 
   },
 };

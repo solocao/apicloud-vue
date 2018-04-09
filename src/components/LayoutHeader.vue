@@ -20,6 +20,7 @@ import { fixStatusBar } from '../lib/api';
 
 export default {
   mounted() {
+    alert('哈哈');
     const header = document.getElementById('header');
     fixStatusBar(header);
   },
