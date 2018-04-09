@@ -17,6 +17,7 @@
     "chimee-kernel-flv": "^1.4.10",
     "quasar-extras": "^1.0.2",
     "quasar-framework": "^0.15.10",
+    "query-string": "^6.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "video.js": "^6.7.3",

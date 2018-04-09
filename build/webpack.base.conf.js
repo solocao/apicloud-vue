@@ -41,6 +41,9 @@ module.exports = {
       'quasar-styl': path.resolve(__dirname, '../node_modules/quasar-framework/dist/quasar.mat.styl')
     }
   },
+  // externals: [
+  //   { api: "window.api" }
+  // ],
   module: {
     rules: [
       // ...(config.dev.useEslint ? [createLintingRule()] : []),

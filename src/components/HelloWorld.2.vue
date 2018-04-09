@@ -2,20 +2,22 @@
   <div class="full-width full-height">
     <q-card inline class="full-width">
       <q-card-main>
-        <!-- <video-player class="video-player-box" ref="videoPlayer" :options="playerOptions" :playsinline="true" customEventName="customstatechangedeventname">
-        </video-player> -->
+        <video-player class="video-player-box" ref="videoPlayer" :options="playerOptions" :playsinline="true" customEventName="customstatechangedeventname">
+        </video-player>
       </q-card-main>
     </q-card>
   </div>
 </template>
 
 <script>
-import VideoPlayer from './VideoPlayer';
+import 'video.js/dist/video-js.css';
+
+import { videoPlayer } from 'vue-video-player';
 
 export default {
   name: 'HelloWorld',
   components: {
-    VideoPlayer,
+    videoPlayer,
   },
   data() {
     return {

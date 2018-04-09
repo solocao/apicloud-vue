@@ -11,6 +11,9 @@ import './css/app.styl';
 
 Vue.config.productionTip = false;
 
+
+Vue.prototype.WindowLib = WindowLib;
+
 Vue.use(Quasar, {
   components: All,
   directives: All,
