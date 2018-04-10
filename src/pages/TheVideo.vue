@@ -11,6 +11,21 @@
       </q-toolbar>
     </q-layout-header>
     <q-page-container style="width:100%;height:900px">
+      <q-card>
+        <q-card-media>
+          <img src="https://imgsa.baidu.com/news/q%3D100/sign=938ce6d3e550352ab76121086342fb1a/9c16fdfaaf51f3de1df0500098eef01f3a297910.jpg">
+        </q-card-media>
+      </q-card>
+      <q-card>
+        <q-card-media>
+          <img src="https://imgsa.baidu.com/news/q%3D100/sign=938ce6d3e550352ab76121086342fb1a/9c16fdfaaf51f3de1df0500098eef01f3a297910.jpg">
+        </q-card-media>
+      </q-card>
+      <q-card>
+        <q-card-media>
+          <img src="https://imgsa.baidu.com/news/q%3D100/sign=938ce6d3e550352ab76121086342fb1a/9c16fdfaaf51f3de1df0500098eef01f3a297910.jpg">
+        </q-card-media>
+      </q-card>
       视频啦
       <a href="http://imgcache.qq.com/open/qcloud/video/vcplayer/demo/tcplayer.html?autoplay=true">点击点击</a>
     </q-page-container>
