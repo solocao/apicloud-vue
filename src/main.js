@@ -8,6 +8,8 @@ import Quasar, * as All from 'quasar';
 import 'quasar-extras/roboto-font/roboto-font.css';
 import 'quasar-extras/material-icons/material-icons.css';
 import './css/app.styl';
+import 'vue-awesome/icons';
+import Icon from 'vue-awesome/components/Icon';
 
 Vue.config.productionTip = false;
 
@@ -18,6 +20,8 @@ Vue.use(Quasar, {
   components: All,
   directives: All,
 });
+// globally (in your main .js file)
+Vue.component('icon', Icon);
 
 WindowLib.ready(() => {
   // WindowLib.isApiCloud()

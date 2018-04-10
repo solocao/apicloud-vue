@@ -24,7 +24,7 @@ export const fixStatusBar = function (t) {
   if (e == 'ios') fixIos7Bar(t);
   else if (e == 'android') {
     let a = api.systemVersion;
-    a = parseFloat(a), a >= 4.4 && (t.style.paddingTop = '2.36rem', t.style.height = '4.16rem', t.style.lineHeight = '2.2rem');
+    a = parseFloat(a), a >= 4.4 && (t.style.paddingTop = '1.8rem', t.style.height = '4.66rem');
   }
 };
 

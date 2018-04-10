@@ -20,10 +20,22 @@ import { fixStatusBar } from '../lib/api';
 
 export default {
   mounted() {
-    alert('哈哈');
-    const header = document.getElementById('header');
-    fixStatusBar(header);
+    if (this.WindowLib.isApiCloud()) {
+      this.fixStatusBar();
+    }
+  },
+  methods: {
+    fixStatusBar() {
+      const header = document.getElementById('header');
+      fixStatusBar(header);
+    },
   },
 };
 </script>
+<style lang='stylus' scoped>
+#header {
+  position: absolute;
+  top: 0px;
+}
+</style>
 
